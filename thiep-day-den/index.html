@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#4a3356">
+  <title>Dây đèn yêu thương · 20/10</title>
+  <meta name="description" content="Một tấm thiệp 20/10 thắp sáng bằng những khoảnh khắc nhỏ.">
+  <meta property="og:title" content="Dây đèn yêu thương · 20/10">
+  <meta property="og:description" content="Một tấm thiệp 20/10 thắp sáng bằng những khoảnh khắc nhỏ.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%A1%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@500;600&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ==========================================================================
+       TOÀN BỘ CHỮ, ẢNH, NHẠC SỬA Ở FILE NÀY. js/script.js chỉ làm hiệu ứng,
+       KHÔNG ghi đè chữ nào. Tìm các chú thích "SỬA:".
+       ========================================================================== -->
+  <div id="fireflies" aria-hidden="true"></div>
+  <main>
+    <!-- SỬA: màn hình đầu tiên -->
+    <section class="hero">
+      <div class="wire" data-wait aria-hidden="true"><svg viewBox="0 0 400 44" preserveAspectRatio="none"><path d="M0 6 Q50 38 100 6 Q150 38 200 6 Q250 38 300 6 Q350 38 400 6"/></svg></div>
+      <p class="kicker">NGÀY 20 THÁNG 10</p>
+      <h1>Mỗi khoảnh khắc<br>là một <em>ngọn đèn nhỏ</em></h1>
+      <p class="hero-sub">Có một dây đèn đang chờ bạn thắp sáng.</p>
+      <button class="light-button" id="open-lights" type="button">Chạm để bật đèn</button>
+      <p class="sound-note">Bật âm lượng để nghe trọn món quà</p>
+    </section>
+
+    <!-- SỬA: 4 khoảnh khắc. Mỗi <section class="moment"> gồm một ảnh + một câu.
+         Đổi ảnh: chép ảnh vào assets/images/ rồi đổi src (ví dụ src="assets/images/anh-cua-toi.jpg").
+         Gõ sai tên thì thiệp tự dùng ảnh minh hoạ. Muốn thêm/bớt khoảnh khắc: chép hoặc xoá cả khối <section>. -->
+    <section class="moment" id="m1">
+      <div class="wire" aria-hidden="true"><svg viewBox="0 0 400 44" preserveAspectRatio="none"><path d="M0 6 Q50 38 100 6 Q150 38 200 6 Q250 38 300 6 Q350 38 400 6"/></svg></div>
+      <figure class="polaroid">
+        <img src="assets/images/daothao.jpg" onerror="this.onerror=null;this.src='assets/images/anh-1.svg'" alt="Khoảnh khắc thứ nhất">
+        <figcaption>Những ngày bình yên</figcaption>
+      </figure>
+      <p class="note">Thật nhiều sức khỏe, công việc thuận lợi. 💐</p>
+    </section>
+
+    <section class="moment">
+      <div class="wire" aria-hidden="true"><svg viewBox="0 0 400 44" preserveAspectRatio="none"><path d="M0 6 Q50 38 100 6 Q150 38 200 6 Q250 38 300 6 Q350 38 400 6"/></svg></div>
+      <figure class="polaroid">
+        <img src="assets/images/daothao1.jpg" onerror="this.onerror=null;this.src='assets/images/anh-2.svg'" alt="Khoảnh khắc thứ hai">
+        <figcaption>Nụ cười của bạn</figcaption>
+      </figure>
+      <p class="note">Mong chị luôn tươi cười, vui vẻ và gặp nhiều may mắn. 💗</p>
+    </section>
+
+    <section class="moment">
+      <div class="wire" aria-hidden="true"><svg viewBox="0 0 400 44" preserveAspectRatio="none"><path d="M0 6 Q50 38 100 6 Q150 38 200 6 Q250 38 300 6 Q350 38 400 6"/></svg></div>
+      <figure class="polaroid">
+        <img src="assets/images/daothao2.jpg" onerror="this.onerror=null;this.src='assets/images/anh-3.svg'" alt="Khoảnh khắc thứ ba">
+        <figcaption>Điều bạn không nói</figcaption>
+      </figure>
+      <p class="note">Luôn vững vàng, tự tin và mọi việc đều suôn sẻ. 💗</p>
+    </section>
+
+    <!-- SỬA: lời chúc chính ở cuối -->
+    <section class="finale" id="finale">
+      <div class="wire" aria-hidden="true"><svg viewBox="0 0 400 44" preserveAspectRatio="none"><path d="M0 6 Q50 38 100 6 Q150 38 200 6 Q250 38 300 6 Q350 38 400 6"/></svg></div>
+      <p class="kicker">GỬI NGƯỜI ĐẶC BIỆT</p>
+      <h2>Chúc mừng <em>20 · 10</em></h2>
+      <!-- SỬA: NỘI DUNG LỜI CHÚC. Mỗi <p> là một đoạn, <br> là xuống dòng. Chữ tự chạy ra từng chữ.
+           data-speed = tốc độ gõ (mili giây mỗi chữ, số nhỏ thì nhanh hơn). -->
+      <div class="sr-only" id="message-source">
+        <p>Chúc chị Thảo sức khỏe dồi dào,<br>
+Ngày càng xinh đẹp, ngọt ngào như hoa.<br>
+Nụ cười luôn nở trên môi,<br>
+Mỗi ngày vui vẻ, cuộc đời thảnh thơi.</p>
+
+<p>Nối mi, làm móng xinh xinh,<br>
+Khách nhìn khách thích, khen mình có tâm.<br>
+Trang điểm rạng rỡ, tóc chăm,<br>
+Gội đầu thư giãn, khách thăm mỗi ngày.</p>
+
+<p>Chúc chị buôn bán thật may,<br>
+Khách đông nườm nượp, đơn đầy quanh năm.<br>
+Tiền vô đều đặn, tăng dần,<br>
+Công việc phát đạt, xa gần đều đông.</p>
+
+<p>Hai mươi tháng Mười vui lòng,<br>
+Chúc chị hạnh phúc, trong lòng an yên.<br>
+Làm ăn phát đạt, tiền vô liên miên,<br>
+Có chi ngon ngọt cũng phần cụ nha! 😆</p>
+      </div>
+      <p class="typed" id="typed-message" data-speed="42" aria-hidden="true"></p>
+      <p class="signature" id="signature">Thương mến, <span>♡</span></p>
+      <p class="footer-note">Được thắp sáng bằng một chút yêu thương</p>
+    </section>
+  </main>
+
+  <!-- SỬA: chữ trên nút nhạc. data-label-on = chữ khi đang phát; data-label-off = chữ khi đang tắt -->
+  <button class="music-button" id="music-toggle" type="button" aria-pressed="false" data-label-on="Tắt nhạc" data-label-off="Bật nhạc">♫ <span id="music-label">Bật nhạc</span></button>
+
+  <!-- SỬA: NHẠC. Đổi src nếu dùng bài khác (để trong assets/music/). data-volume = âm lượng từ 0 đến 1 -->
+  <audio id="background-music" src="assets/music/LAVIEM.mp3" data-volume="0.48" preload="auto" loop></audio>
+  <script src="js/script.js"></script>
+</body>
+</html>

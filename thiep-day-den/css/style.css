@@ -1,0 +1,59 @@
+:root { --cream: #fff3e6; --ink: #7a4f6d; --glow: #ffd98a; --wire: rgba(233,201,166,.7); }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--cream); font: 400 1rem/1.7 'DM Sans', system-ui, sans-serif; background: #4a3356; overflow-x: hidden; }
+body::before { content: ''; position: fixed; inset: 0; z-index: -1; background: linear-gradient(180deg, #4a3356 0%, #7a4f6d 50%, #b87c8b 100%); }
+em { font: 600 1.05em 'Dancing Script', cursive; color: #ffcfae; font-style: normal; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+main { max-width: 540px; margin: 0 auto; padding: 0 22px; }
+.kicker { margin: 0 0 14px; font-size: .75rem; letter-spacing: .22em; color: #e9c9a6; }
+
+/* dây đèn */
+.wire { position: relative; height: 44px; margin: 0 -22px; }
+.wire svg { display: block; width: 100%; height: 44px; fill: none; stroke: var(--wire); stroke-width: 1.4; }
+.wire path { vector-effect: non-scaling-stroke; }
+.wire i { position: absolute; width: 12px; height: 17px; margin-left: -6px; border-radius: 50% 50% 46% 46%; background: #6b4a63; transition: background .7s ease, box-shadow .7s ease; }
+.wire i::before { content: ''; position: absolute; left: 3px; top: -4px; width: 6px; height: 5px; background: #b89a86; border-radius: 1px; }
+.wire.lit i { background: var(--glow); box-shadow: 0 0 14px 5px rgba(255,205,120,.5); }
+
+/* màn hình đầu */
+.hero { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; padding: 70px 0 40px; }
+.hero .wire { position: absolute; top: max(0px, env(safe-area-inset-top)); left: 0; right: 0; margin: 0; }
+h1 { margin: 0 0 14px; font: 500 clamp(1.9rem, 8vw, 2.7rem)/1.25 'Playfair Display', serif; }
+.hero-sub { margin: 0 0 30px; color: #f1d9c8; }
+.light-button { padding: 14px 30px; border: 1px solid rgba(255,217,138,.7); border-radius: 999px; background: rgba(255,217,138,.14); color: var(--cream); font: 500 1rem 'DM Sans', sans-serif; cursor: pointer; }
+.light-button:hover, .light-button:focus-visible { background: rgba(255,217,138,.28); outline: 2px solid var(--glow); outline-offset: 3px; }
+.sound-note { margin: 18px 0 0; font-size: .85rem; color: #e0c2b4; }
+
+/* khoảnh khắc */
+.moment { padding-bottom: 54px; }
+.polaroid { position: relative; width: min(76%, 300px); margin: 34px 0 0 6%; padding: 12px 12px 14px; background: #fffaf3; color: var(--ink); box-shadow: 0 16px 34px rgba(30,15,35,.35); transform: rotate(-2.5deg); transform-origin: 50% -40px; }
+.polaroid::before { content: ''; position: absolute; left: 50%; top: -44px; width: 1.5px; height: 44px; background: var(--wire); }
+.polaroid img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: #f6dde5; }
+.polaroid figcaption { margin-top: 10px; text-align: center; font: 500 1.2rem 'Dancing Script', cursive; }
+.note { width: min(76%, 300px); margin: 22px 0 0 6%; font: 500 1.05rem/1.55 'Playfair Display', serif; color: #fde6d4; }
+.moment:nth-of-type(even) .polaroid { margin: 34px 6% 0 auto; transform: rotate(2.5deg); }
+.moment:nth-of-type(even) .note { margin: 22px 6% 0 auto; text-align: right; }
+.js .moment .polaroid, .js .moment .note { opacity: 0; transform: translateY(18px) rotate(0); transition: opacity 1s ease .5s, transform 1s ease .5s; }
+.js .moment.seen .polaroid { opacity: 1; transform: rotate(-2.5deg); animation: sway 7s ease-in-out 1.6s infinite; }
+.js .moment:nth-of-type(even).seen .polaroid { transform: rotate(2.5deg); animation-name: sway2; }
+.js .moment.seen .note { opacity: 1; transform: none; }
+@keyframes sway { 50% { transform: rotate(-1.2deg); } }
+@keyframes sway2 { 50% { transform: rotate(1.2deg); } }
+
+/* lời chúc */
+.finale { text-align: center; padding: 10px 0 120px; }
+.finale .wire { margin-bottom: 34px; }
+h2 { margin: 0 0 22px; font: 500 clamp(1.8rem, 7vw, 2.4rem)/1.25 'Playfair Display', serif; }
+.typed { min-height: 7em; margin: 0 0 22px; font-size: 1.08rem; line-height: 1.95; white-space: pre-line; }
+.signature { margin: 0 0 40px; font: 600 1.6rem 'Dancing Script', cursive; color: #ffcfae; opacity: 0; transition: opacity 1.2s ease; }
+.signature.visible { opacity: 1; }
+.signature span { color: #ff9db5; }
+.footer-note { margin: 0; font-size: .8rem; letter-spacing: .06em; color: #e0c2b4; }
+
+.music-button { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 5; padding: 10px 16px; border: 1px solid rgba(255,217,138,.55); border-radius: 999px; background: rgba(74,51,86,.78); color: var(--cream); font: 500 .85rem 'DM Sans', sans-serif; cursor: pointer; }
+.music-button:focus-visible { outline: 2px solid var(--glow); outline-offset: 3px; }
+
+#fireflies span { position: fixed; z-index: -1; width: 4px; height: 4px; border-radius: 50%; background: var(--glow); box-shadow: 0 0 10px 3px rgba(255,217,138,.5); animation: float 9s ease-in-out infinite; }
+@keyframes float { 0%,100% { transform: translate(0,0); opacity: .15; } 50% { transform: translate(24px,-34px); opacity: .8; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .js .moment.seen .polaroid { animation: none; } #fireflies span { animation: none; opacity: .4; } }
